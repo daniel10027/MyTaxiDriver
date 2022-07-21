@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import '../brand_colors.dart';
 
-class TaxiButton extends StatelessWidget {
+class AvailabilityButton extends StatelessWidget {
   late final String title;
   late final Color color;
   final VoidCallback onPressed;
 
   // ignore: non_constant_identifier_names
-  TaxiButton({
+  AvailabilityButton({
     required this.title,
     required this.onPressed,
     required this.color,
@@ -30,10 +30,11 @@ class TaxiButton extends StatelessWidget {
         ),
         child: Container(
           height: 50,
+          width: 200,
           child: Center(
             child: Text(
               title,
-              style: TextStyle(fontSize: 18, fontFamily: 'Brand-Bold'),
+              style: TextStyle(fontSize: 20, fontFamily: 'Brand-Bold'),
             ),
           ),
         ),

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import '../brand_colors.dart';
 
-class TaxiButton extends StatelessWidget {
+class TaxiOutlineButton extends StatelessWidget {
   late final String title;
   late final Color color;
   final VoidCallback onPressed;
 
   // ignore: non_constant_identifier_names
-  TaxiButton({
+  TaxiOutlineButton({
     required this.title,
     required this.onPressed,
     required this.color,
@@ -15,16 +15,16 @@ class TaxiButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
+    return OutlinedButton(
         style: ButtonStyle(
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50.0),
-                  side: BorderSide(color: color))),
+                  borderRadius: BorderRadius.circular(25.0),
+                  side: BorderSide(color: Colors.white))),
           backgroundColor: MaterialStateProperty.resolveWith<Color>(
             (Set<MaterialState> states) {
-              if (states.contains(MaterialState.pressed)) return color;
-              return color;
+              if (states.contains(MaterialState.pressed)) return Colors.white;
+              return Colors.white;
             },
           ),
         ),
@@ -33,7 +33,10 @@ class TaxiButton extends StatelessWidget {
           child: Center(
             child: Text(
               title,
-              style: TextStyle(fontSize: 18, fontFamily: 'Brand-Bold'),
+              style: TextStyle(
+                  fontSize: 18.0,
+                  fontFamily: 'Brand-Bold',
+                  color: Colors.black),
             ),
           ),
         ),
